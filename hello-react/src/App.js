@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 const Greeting = props => <p>Hello {props.name}!</p>;
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.title = 'Sergio React App';
+}
+
+
 
 render() {
     return (
         <div>
-            <h1>My App</h1>
+            <h1>{this.title}</h1>
             <br />
-            <Greeting name="User" />
+            <Greeting name="Guys!" />
         </div>
     )
 }}
