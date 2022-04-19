@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-const Greeting = props => <p>Hello {props.name}!</p>;
-
 class App extends Component {
     constructor(props) {
         super(props);
-        this.title = 'Sergio App'
-        this.state = { clickCounter: 0 }
+        this.state = {
+            username: '',
+            password: '',
+            passwordConfirmation: '',
+            email: '',
+            errors: []
+        };
     }
-
-    renderClickCount() {
-        return <p>I've been clicked {this.state.clickCounter} times!</p>;
-    }
-
-    render() {
+    displayForm() {
         return (
             <div>
-                <h1>{this.title}</h1>
-                <br/>
-                <Greeting name="Guys!"/>
-                <br/>
-                {this.renderClickCount()}
+                Username: <input type="text" /><br />
+                Password: <input type="text" /><br />
+                Password Confirmation: <input type="text" /><br />
+                Email: <input type="text" /><br />
+                <br />
+                <button>Submit</button>
+            </div>
+        );
+    }
+    render() {
+        return (
+            <div className="App">
+                Create Account
+                <hr />
+                {this.displayForm()}
             </div>
         )
     }
-};
-
+}
 export default App;
